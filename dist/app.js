@@ -11,11 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
 const core_1 = require("./core");
+const out_1 = require("./out");
 class App {
     run() {
         return __awaiter(this, void 0, void 0, function* () {
             const res = yield new core_1.PromptService().input('Number', 'number');
-            console.log(res);
+            const logger = out_1.ConsoleLogger.getInstance();
+            logger.log(res);
         });
     }
 }
