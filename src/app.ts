@@ -1,11 +1,9 @@
-import {PromptService} from "./core";
 import {ConsoleLogger} from "./out";
+import {FfmpegExecutor} from "./commands";
 
 export class App {
     async run() {
-        const res = await new PromptService().input<number>('Number', 'number')
-        const logger = ConsoleLogger.getInstance()
-        logger.log(res)
+        new FfmpegExecutor(ConsoleLogger.getInstance()).execute()
     }
 }
 
